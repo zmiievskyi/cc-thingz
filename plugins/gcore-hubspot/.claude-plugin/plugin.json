@@ -1,0 +1,21 @@
+{
+  "name": "gcore-hubspot",
+  "description": "Gcore HubSpot MCP server for Claude Code",
+  "version": "0.1.0",
+  "author": {
+    "name": "Anton Zmiievskyi"
+  },
+  "mcpServers": {
+    "gcore-hubspot": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "--registry=http://npmrepo.p.gc.onl/",
+        "@gcore/hubspot-mcp@latest"
+      ],
+      "env": {
+        "HUBSPOT_ACCESS_TOKEN": "${HUBSPOT_ACCESS_TOKEN}"
+      }
+    }
+  }
+}

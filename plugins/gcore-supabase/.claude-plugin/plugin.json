@@ -1,0 +1,23 @@
+{
+  "name": "gcore-supabase",
+  "description": "Gcore self-hosted Supabase MCP server (via mcp-remote) for Claude Code",
+  "version": "0.1.0",
+  "author": {
+    "name": "Anton Zmiievskyi"
+  },
+  "mcpServers": {
+    "supabase-selfhosted": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://dra4-c-nx-revops-supabase-01/mcp",
+        "--header",
+        "Authorization: Basic ${SUPABASE_AUTH_BASIC}"
+      ],
+      "env": {
+        "NODE_TLS_REJECT_UNAUTHORIZED": "0"
+      }
+    }
+  }
+}

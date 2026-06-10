@@ -1,0 +1,37 @@
+{
+  "name": "gcore-marketplace",
+  "owner": {
+    "name": "Anton Zmiievskyi",
+    "email": "ai.pool.hub@gmail.com"
+  },
+  "description": "Gcore plugins for Claude Code",
+  "plugins": [
+    {
+      "name": "gcore-hubspot",
+      "source": "./plugins/gcore-hubspot",
+      "description": "Gcore HubSpot MCP server for Claude Code",
+      "version": "0.1.0",
+      "author": {
+        "name": "Anton Zmiievskyi"
+      }
+    },
+    {
+      "name": "gcore-atlassian",
+      "source": "./plugins/gcore-atlassian",
+      "description": "Gcore Atlassian (Jira) MCP server for Claude Code",
+      "version": "0.1.0",
+      "author": {
+        "name": "Anton Zmiievskyi"
+      }
+    },
+    {
+      "name": "gcore-supabase",
+      "source": "./plugins/gcore-supabase",
+      "description": "Gcore self-hosted Supabase MCP server for Claude Code",
+      "version": "0.1.0",
+      "author": {
+        "name": "Anton Zmiievskyi"
+      }
+    }
+  ]
+}

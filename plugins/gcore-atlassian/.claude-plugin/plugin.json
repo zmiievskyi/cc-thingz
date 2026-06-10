@@ -1,0 +1,25 @@
+{
+  "name": "gcore-atlassian",
+  "description": "Gcore Atlassian (Jira) MCP server for Claude Code",
+  "version": "0.1.0",
+  "author": {
+    "name": "Anton Zmiievskyi"
+  },
+  "mcpServers": {
+    "mcp-atlassian": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "mcp-atlassian-gcore",
+        "--extra-index-url",
+        "https://${PYPI_USERNAME}:${PYPI_PASSWORD}@pypi-fe.p.gc.onl/simple/",
+        "mcp-atlassian"
+      ],
+      "env": {
+        "JIRA_URL": "https://jira.gcore.lu",
+        "JIRA_PERSONAL_TOKEN": "${JIRA_PERSONAL_TOKEN}",
+        "JIRA_PROJECTS_FILTER": "ISVS"
+      }
+    }
+  }
+}
