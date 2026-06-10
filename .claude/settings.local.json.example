@@ -1,0 +1,9 @@
+{
+  "env": {
+    "HUBSPOT_ACCESS_TOKEN": "",
+    "PYPI_USERNAME": "",
+    "PYPI_PASSWORD": "",
+    "JIRA_PERSONAL_TOKEN": "",
+    "SUPABASE_AUTH_BASIC": ""
+  }
+}

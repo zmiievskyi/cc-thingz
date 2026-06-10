@@ -19,23 +19,37 @@ A Claude Code plugin marketplace with Gcore MCP servers.
 ## Step 1 — Set the secrets (env vars)
 
 Secrets are **not** stored in this repo. Each MCP reads them from environment
-variables. Add them to your shell profile (`~/.zshrc`), then restart your shell.
+variables. The easiest way is a local Claude Code settings file — no shell
+export needed.
 
-```sh
-# gcore-hubspot
-export HUBSPOT_ACCESS_TOKEN="..."
+1. Copy the example file:
+   ```sh
+   cp .claude/settings.local.json.example .claude/settings.local.json
+   ```
+2. Fill in your values in `.claude/settings.local.json`:
+   ```json
+   {
+     "env": {
+       "HUBSPOT_ACCESS_TOKEN": "...",
+       "PYPI_USERNAME": "...",
+       "PYPI_PASSWORD": "...",
+       "JIRA_PERSONAL_TOKEN": "...",
+       "SUPABASE_AUTH_BASIC": "..."
+     }
+   }
+   ```
 
-# gcore-atlassian (Jira)
-export PYPI_USERNAME="..."          # for the private pypi index
-export PYPI_PASSWORD="..."
-export JIRA_PERSONAL_TOKEN="..."
+`.claude/settings.local.json` is git-ignored, so your secrets stay out of the
+repo. Claude Code loads these env vars on start (restart it after editing).
 
-# gcore-supabase
-# base64 part from "Authorization: Basic <THIS>"
-export SUPABASE_AUTH_BASIC="..."
-```
+> Tip: you only need the vars for the plugins you actually install. Leave the
+> others empty or remove them.
 
-> Tip: you only need the vars for the plugins you actually install.
+> Note: `SUPABASE_AUTH_BASIC` is the base64 part from
+> `Authorization: Basic <THIS>`.
+
+> Alternative: you can also `export` these vars in your shell profile
+> (`~/.zshrc`) if you prefer.
 
 ## Step 2 — Add the marketplace
 
